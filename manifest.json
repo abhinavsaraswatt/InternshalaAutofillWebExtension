@@ -22,5 +22,6 @@
       "matches": ["https://internshala.com/*"],
       "js": ["content.js", "jquery-3.6.1.js"]
     }
-  ]
+  ],
+  "options_page": "options.html"
 }

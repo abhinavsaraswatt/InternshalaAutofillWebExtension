@@ -13,12 +13,12 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       ) {
         //   console.log(currPageLinks[i]);
         // to remove duplicate links
-        collectedLinks.push(currPageLinks[i]);
+        collectedLinks.push(currPageLinks[i]["href"]); // here we are saying specifically add href in array which is gonna be stored.
       }
     }
   }
   // console.log(collectedLinks.length);
-  // console.log(collectedLinks);
+  //   console.log(collectedLinks);
 
   // In content scripts we don't have access to chrome api !!!!!!!!!!!!!!
   chrome.runtime.sendMessage({
