@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Internshala Auto Fill",
+  "version": "1.0",
+  "description": "This will collect all links of result and try to fill it one at a time",
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_title": "Internshala Auto Fill"
+  },
+  "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  },
+  "permissions": ["tabs", "https://internshala.com/internships/*"],
+  "content_scripts": {
+    "matches": ["https://internshala.com/internships/*"],
+    "js": ["content.js", "jquery-3.6.1.js"]
+  }
+}
