@@ -7,4 +7,9 @@ $(function () {
       });
     });
   });
+  $("#btnStartApplying").click(function () {
+    chrome.runtime.sendMessage({
+      todo: "startApplying",
+    });
+  });
 });
