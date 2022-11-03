@@ -7,14 +7,22 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     var collectedLinks = [];
     var currPageLinks = document.getElementsByClassName("view_detail_button");
     for (let i = 0; i < currPageLinks.length; i++) {
-      if (currPageLinks[i].getAttribute("href").includes("internship/detail")) {
-        if (!currPageLinks[i].textContent.includes("View details")) {
-          console.log(currPageLinks[i]);
-          // to remove duplicate links
-          collectedLinks.push(currPageLinks[i]);
-        }
+      if (
+        currPageLinks[i].getAttribute("href").includes("internship/detail") &&
+        !currPageLinks[i].textContent.includes("View details")
+      ) {
+        //   console.log(currPageLinks[i]);
+        // to remove duplicate links
+        collectedLinks.push(currPageLinks[i]);
       }
     }
-    console.log(collectedLinks.length);
   }
+  // console.log(collectedLinks.length);
+  // console.log(collectedLinks);
+
+  // In content scripts we don't have access to chrome api !!!!!!!!!!!!!!
+  chrome.runtime.sendMessage({
+    todo: "addLinksToStorage",
+    links: collectedLinks,
+  });
 });

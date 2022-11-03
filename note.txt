@@ -1,1 +1,3 @@
 https://internshala.com/internships/work-from-home-cloud-computing,data-entry,front-end-development,full-stack-development,javascript-development,network-engineering,python%2Fdjango,web-development-internships/part_time-true/
+
+collect all pages links and click on button 'done'. after clicking done all pages links will get stored in chrome storage and starting try to applying for every link individually.

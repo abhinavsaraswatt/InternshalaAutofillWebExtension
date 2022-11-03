@@ -11,7 +11,12 @@
     "scripts": ["eventPage.js"],
     "persistent": false
   },
-  "permissions": ["tabs", "https://internshala.com/*"],
+  "permissions": [
+    "tabs",
+    "https://internshala.com/*",
+    "storage",
+    "notifications"
+  ],
   "content_scripts": [
     {
       "matches": ["https://internshala.com/*"],
