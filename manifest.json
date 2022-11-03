@@ -11,9 +11,11 @@
     "scripts": ["eventPage.js"],
     "persistent": false
   },
-  "permissions": ["tabs", "https://internshala.com/internships/*"],
-  "content_scripts": {
-    "matches": ["https://internshala.com/internships/*"],
-    "js": ["content.js", "jquery-3.6.1.js"]
-  }
+  "permissions": ["tabs", "https://internshala.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://internshala.com/*"],
+      "js": ["content.js", "jquery-3.6.1.js"]
+    }
+  ]
 }
