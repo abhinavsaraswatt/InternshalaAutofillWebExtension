@@ -13,7 +13,12 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       ) {
         //   console.log(currPageLinks[i]);
         // to remove duplicate links
-        collectedLinks.push(currPageLinks[i]["href"]); // here we are saying specifically add href in array which is gonna be stored.
+        collectedLinks.push(
+          currPageLinks[i]["href"].replace(
+            "internship/detail",
+            "application/form"
+          )
+        ); // here we are saying specifically add href in array which is gonna be stored.
       }
     }
   }
@@ -25,4 +30,25 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     todo: "addLinksToStorage",
     links: collectedLinks,
   });
+
+  // doApplyingProcess
+  // if (request.todo == "doApplyingProcess") {
+  //   console.log("click it");
+  //   document.getElementsByClassName("copyCoverLetterTitle")[0].click();
+  //   // if (document.getElementsByTagName('h4').length == 2) { keep this tab open and move to next one and keep filling}
+  //   // document.getElementById('submit').click()
+  // }
+
+  if (request.todo == "doApplyingProcess") {
+    console.log("click it");
+
+    document.getElementsByClassName("copyCoverLetterTitle")[0].click();
+
+    setTimeout(() => {
+      document.getElementById("submit").click();
+    }, 2000);
+
+    // means there is no additional question
+    // if (document.getElementsByTagName('h4').length == 1)
+  }
 });

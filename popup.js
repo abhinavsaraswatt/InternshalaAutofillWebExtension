@@ -8,8 +8,9 @@ $(function () {
     });
   });
   $("#btnStartApplying").click(function () {
-    chrome.runtime.sendMessage({
-      todo: "startApplying",
-    });
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // to send message in content script we use tabs.sendMessage and to send message in eventPage (or background script) we use runtime.sendMessage
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    chrome.runtime.sendMessage({ todo: "startApplying" });
   });
 });
